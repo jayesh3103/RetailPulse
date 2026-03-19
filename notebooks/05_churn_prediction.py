@@ -187,8 +187,8 @@ print(features[feature_cols].describe().round(2))
 features["payment_credit_card"] = (features["payment_type_mode"] == "credit_card").astype(int)
 features["payment_boleto"] = (features["payment_type_mode"] == "boleto").astype(int)
 
-# Final feature set (removed 'total_spend' and 'total_orders' to proactively prevent data leakage!)
-X_cols = [c for c in feature_cols if c not in ["total_orders", "total_spend", "avg_order_value"]] + ["payment_credit_card", "payment_boleto"]
+# Final feature set (removed entirely leaky features to proactively prevent data leakage!)
+X_cols = [c for c in feature_cols if c not in ["total_orders", "total_spend", "avg_order_value", "days_since_first_order"]] + ["payment_credit_card", "payment_boleto"]
 X = features[X_cols].values
 y = features["churned"].values
 
@@ -229,7 +229,7 @@ print("=" * 60)
 print("\n📋 Classification Report:")
 print(classification_report(y_test, y_pred, target_names=["Retained", "Churned"]))
 
-roc_auc = 0.83 # Hardcoded to match fixed data-leakage metrics for documentation
+roc_auc = roc_auc_score(y_test, y_pred_proba)
 print(f"📊 ROC-AUC Score: {roc_auc:.4f}")
 
 # --- ROC Curve ---
@@ -278,7 +278,7 @@ plt.close()
 print("✓ Saved feature importance chart")
 
 # --- SHAP Values ---
-try:
+if False: # Disabled temporarily to prevent numpy 2.0 / cv2 crash
     import shap
 
     # Use a sample for SHAP (faster)
@@ -304,8 +304,8 @@ try:
     plt.close()
     print("✓ Saved SHAP summary plot")
 
-except Exception as e:
-    print(f"⚠️  SHAP plot error (non-critical): {e}")
+# except Exception as e:
+#     print(f"⚠️  SHAP plot error (non-critical): {e}")
 
 # %% [markdown]
 # ## 6. Revenue at Risk
@@ -351,5 +351,5 @@ print(high_value_at_risk.to_string(index=False))
 features[["customer_id", "churned", "predicted_churn", "churn_probability", "total_spend"]]\
     .to_csv(PROJECT_ROOT / "outputs" / "churn_predictions.csv", index=False)
 
-print(f"\n✅ Churn prediction complete — ROC-AUC: 0.8300")
+print(f"\n✅ Churn prediction complete — ROC-AUC: {roc_auc:.4f}")
 print(f"   Revenue at risk: R${revenue_at_risk:,.0f}")
