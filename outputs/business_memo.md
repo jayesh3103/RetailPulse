@@ -1,4 +1,4 @@
-# Business Memo — Olist Customer Intelligence & Revenue Optimization
+# Business Memo — RetailPulse
 
 ## Situation
 

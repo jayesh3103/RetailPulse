@@ -1,5 +1,5 @@
 """
-Olist E-Commerce Customer Intelligence Dashboard
+RetailPulse Customer Intelligence Platform
 3-page interactive dashboard built with Plotly Dash
 """
 
@@ -117,7 +117,7 @@ app = dash.Dash(
     __name__,
     external_stylesheets=[dbc.themes.DARKLY, dbc.icons.FONT_AWESOME],
     suppress_callback_exceptions=True,
-    title="Olist Customer Intelligence Dashboard"
+    title="RetailPulse"
 )
 
 # ─── Color & Style Constants ──────────────────────────────────────────────────
@@ -492,7 +492,7 @@ NAVBAR = dbc.Navbar(
         dbc.Row([
             dbc.Col(html.Div([
                 html.I(className="fas fa-chart-line", style={"fontSize": "24px", "color": "#00d4ff", "marginRight": "10px"}),
-                html.Span("Olist Customer Intelligence", style={"fontWeight": "700", "fontSize": "1.2rem", "color": "#fff"}),
+                html.Span("RetailPulse", style={"fontWeight": "700", "fontSize": "1.2rem", "color": "#fff"}),
             ], style={"display": "flex", "alignItems": "center"})),
         ], align="center"),
         dbc.Row([

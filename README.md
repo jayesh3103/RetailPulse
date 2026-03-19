@@ -1,4 +1,4 @@
-# 🛒 E-commerce Customer Intelligence & Revenue Optimization — Olist
+# 🛒 RetailPulse — Customer Intelligence & Revenue Optimization
 
 > End-to-end analytics project using 100K+ real orders from the Olist Brazilian marketplace. Covers data engineering, exploratory analysis, ML churn prediction, interactive dashboards, and business storytelling.
 
@@ -115,8 +115,8 @@ E-commerce/
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/YOUR_USERNAME/E-commerce-Customer-Intelligence.git
-cd E-commerce-Customer-Intelligence
+git clone https://github.com/jayesh3103/RetailPulse.git
+cd RetailPulse
 
 # 2. Install dependencies
 pip install -r requirements.txt
