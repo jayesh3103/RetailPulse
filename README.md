@@ -4,8 +4,10 @@
 
 ![Python](https://img.shields.io/badge/Python-3.10-blue?style=flat-square&logo=python)
 ![SQLite](https://img.shields.io/badge/SQLite-Database-07405e?style=flat-square&logo=sqlite)
+![Power BI](https://img.shields.io/badge/Power_BI-Analytics-F2C811?style=flat-square&logo=powerbi&logoColor=black)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-ML-f89939?style=flat-square&logo=scikit-learn)
 ![Plotly](https://img.shields.io/badge/Plotly_Dash-Dashboard-3f4f75?style=flat-square&logo=plotly)
+[![GitHub stars](https://img.shields.io/github/stars/jayesh3103/RetailPulse?style=social)](https://github.com/jayesh3103/RetailPulse/stargazers)
 
 ---
 
